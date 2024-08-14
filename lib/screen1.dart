@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'widgets/custom_text_widget.dart';
 
 class Screen1 extends StatefulWidget {
