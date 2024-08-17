@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
+import 'widgets/cuustom_text_field_widget.dart';
 
 class Screen2 extends StatefulWidget {
   const Screen2({super.key});
@@ -10,6 +13,12 @@ class Screen2 extends StatefulWidget {
 class _Screen2State extends State<Screen2> {
 
   final key = GlobalKey<ScaffoldState>();
+
+  final formKey = GlobalKey<FormState>();
+
+  TextEditingController nameController = TextEditingController();
+  TextEditingController nummberController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,7 +65,109 @@ class _Screen2State extends State<Screen2> {
           ],
         ),
       ),
-      body: Text('text')
+      body: Form(
+        key: formKey,
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CustomTextFieldWidget(
+                controller: nameController,
+                hintText: 'Enter your email',
+                prefixIcon: Icon(Icons.email),
+                obscureText: false,
+                validator: (p0) {
+                  if(p0!.isEmpty)
+                  {
+                    return 'Please enter your email';
+                  }
+                },
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              CustomTextFieldWidget(
+                controller: nummberController,
+                hintText: 'Enter your password',
+                prefixIcon: Icon(Icons.lock),
+                obscureText: true,
+                validator: (p0) {
+                  if(p0!.isEmpty)
+                  {
+                    return 'Please enter your password';
+                  }
+                },
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              ElevatedButton(onPressed: (){
+                if(formKey.currentState!.validate())
+                {
+                  print('Hello');
+                }
+              }, child: Text('Submit')),
+              SizedBox(
+                height: 50,
+              ),
+              Container(
+                height: 100,
+                width: 100,
+                child: Image.asset('assets/images/test.jpeg',fit: BoxFit.fitHeight,)),
+                SizedBox(
+                height: 50,
+              ),
+              Container(
+                height: 100,
+                width: 100,
+                child: Image.network('https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png',)),
+                SizedBox(
+                height: 50,
+              ),
+              Container(
+                height: 100,
+                width: 100,
+                child: SvgPicture.asset('assets/images/calling.svg',fit: BoxFit.contain,height: 100,width: 100,)),
+                SizedBox(
+                  height: 50,
+                ),
+
+                CircleAvatar(
+                  radius: 50,
+                  backgroundColor: Colors.teal,
+                  // backgroundImage: AssetImage('assets/images/test.jpeg')
+                  // backgroundImage: NetworkImage('https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png'),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(50),
+                    child: Image.asset('assets/images/test.jpeg')),
+                ),
+
+                SizedBox(
+                  height: 50,
+                ),
+
+                Container(
+                  height: 100,
+                  width: 100,
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(50)
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(50),
+                    child: Image.asset('assets/images/test.jpeg',fit: BoxFit.cover,)),
+                ),
+                SizedBox(
+                  height: 50,
+                ),
+
+                CircularProgressIndicator(
+                  color: Colors.red,
+                )
+            ],
+          ),
+        ),
+      )
       
       
       //row widget
