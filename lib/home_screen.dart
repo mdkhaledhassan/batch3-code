@@ -60,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
           body: TabBarView(
             children: [
             Screen1(),
-            Screen2()
+            Screen3()
           ]),
             // body: screenns[currentIndex],
           bottomNavigationBar: BottomAppBar(

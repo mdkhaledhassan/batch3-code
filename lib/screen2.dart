@@ -4,7 +4,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'widgets/cuustom_text_field_widget.dart';
 
 class Screen2 extends StatefulWidget {
-  const Screen2({super.key});
+  Screen2({super.key, this.index});
+  String? index;
 
   @override
   State<Screen2> createState() => _Screen2State();
@@ -71,6 +72,19 @@ class _Screen2State extends State<Screen2> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              SizedBox(
+              height: 30,
+            ),
+            Text(widget.index.toString()),
+            SizedBox(
+              height: 30,
+            ),
+            ElevatedButton(onPressed: (){
+              Navigator.pop(context);
+            }, child: Text('Back')),
+            SizedBox(
+              height: 30,
+            ),
               CustomTextFieldWidget(
                 controller: nameController,
                 hintText: 'Enter your email',
