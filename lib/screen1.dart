@@ -1,7 +1,9 @@
 import 'package:batch3/constant.dart';
+import 'package:batch3/main.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'widgets/custom_text_widget.dart';
 
@@ -15,6 +17,11 @@ class Screen1 extends StatefulWidget {
 class _Screen1State extends State<Screen1> {
   @override
   Widget build(BuildContext context) {
+    String name = '';
+    var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
+    print(height);
+    print(width);
     return Scaffold(
       body: Center(
         child: Column(
@@ -70,15 +77,52 @@ class _Screen1State extends State<Screen1> {
             //   });
             // }, child: Text('Open'))
 
-            //flutter toast
-            ElevatedButton(onPressed: (){
-              showToast('Successfully');
-            }, child: Text('Show Toast')),
+            // //flutter toast
+            // ElevatedButton(onPressed: (){
+            //   showToast('Successfully');
+            // }, child: Text('Show Toast')),
 
-            //sackbar
-            ElevatedButton(onPressed: (){
-              showSnackBar('Successfully', context);
-            }, child: Text('Show Snackbar'))
+            // //sackbar
+            // ElevatedButton(onPressed: (){
+            //   showSnackBar('Successfully', context);
+            // }, child: Text('Show Snackbar'))
+
+            // Container(
+            //   height: height * 0.6,
+            //   width: width * 0.9,
+            //   decoration: BoxDecoration(
+            //     color: Colors.red,
+            //     borderRadius: BorderRadius.circular(15.sp)
+            //   ),
+            //   child: Text('influxdev',style: TextStyle(fontSize: 20.sp),),
+            // )
+
+
+            //get storage
+
+            // ElevatedButton(onPressed: (){
+            //   box.write('name', 'Khaled');
+            // }, child: Text('Save')),
+            // Text(name),
+            // ElevatedButton(onPressed: (){
+            //    name = box.read('name');
+
+            //    print(name);
+
+            //    setState(() {
+                 
+            //    });
+            // }, child: Text('Get')),
+
+            // ElevatedButton(onPressed: (){
+            //    box.remove('name');
+
+            //    print(name);
+
+            //    setState(() {
+                 
+            //    });
+            // }, child: Text('Remove')),
 
 
           ],
