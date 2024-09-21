@@ -46,6 +46,8 @@ dependencies:
   get_storage: ^2.1.1
   sqflite: ^2.3.3+1
   path: any
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
 
 dev_dependencies:
   flutter_test:

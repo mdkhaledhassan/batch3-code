@@ -1,8 +1,6 @@
 import 'package:batch3/sqflite/models/note_model.dart';
-import 'package:flutter/widgets.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
-import 'package:sqflite/sqlite_api.dart';
 
 class Sqflite{
   //int database

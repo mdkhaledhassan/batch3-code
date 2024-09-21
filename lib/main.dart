@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_storage/get_storage.dart';
-import 'home_screen.dart';
-import 'sqflite/screens/home_screen.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'hive-todo/home_page.dart';
 
 final box = GetStorage();
 
 void main() async {
+  await Hive.initFlutter();
+  await Hive.openBox('myBox');
   await GetStorage.init();
   runApp(const MyApp());
 }
@@ -23,7 +25,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         title: 'Flutter Batch 3',
-        home: const MyHomePage(),
+        home: const HomePage(),
       ),
     );
   }
