@@ -1,3 +1,6 @@
+import 'package:batch3/firebase/splash_screen.dart';
+import 'package:batch3/firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_storage/get_storage.dart';
@@ -10,6 +13,9 @@ void main() async {
   await Hive.initFlutter();
   await Hive.openBox('myBox');
   await GetStorage.init();
+  await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -25,7 +31,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         title: 'Flutter Batch 3',
-        home: const HomePage(),
+        home: const SplashScreen(),
       ),
     );
   }
