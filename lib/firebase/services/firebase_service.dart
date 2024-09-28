@@ -1,6 +1,7 @@
 import 'package:batch3/firebase/home_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../login_screen.dart';
 
@@ -53,5 +54,28 @@ class FirebaseService{
 
   signOut() async {
     await FirebaseAuth.instance.signOut();
+  }
+
+  addNote({required String title, required String des}) async {
+    await FirebaseFirestore.instance.collection('Notes').add({
+      'title': title,
+      'des' : des
+    });
+  }
+
+  getNotes() {
+    Stream<QuerySnapshot> data = FirebaseFirestore.instance.collection('Notes').snapshots();
+    return data;
+  }
+
+  upateNote({required String id, required String title, required String des}) async {
+    await FirebaseFirestore.instance.collection('Notes').doc(id).update({
+      'title': title,
+      'des' : des
+    });
+  }
+
+  deleteNote({required String id}) async {
+    await FirebaseFirestore.instance.collection('Notes').doc(id).delete();
   }
 }
