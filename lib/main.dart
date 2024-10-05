@@ -1,5 +1,5 @@
-import 'package:batch3/firebase/splash_screen.dart';
 import 'package:batch3/firebase_options.dart';
+import 'package:batch3/google-map/map_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         title: 'Flutter Batch 3',
-        home: const SplashScreen(),
+        home: const MapScreen(),
       ),
     );
   }

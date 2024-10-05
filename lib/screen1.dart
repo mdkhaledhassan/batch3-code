@@ -1,11 +1,6 @@
-import 'package:batch3/constant.dart';
-import 'package:batch3/main.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fluttertoast/fluttertoast.dart';
-import 'widgets/custom_text_widget.dart';
 
 class Screen1 extends StatefulWidget {
   const Screen1({super.key});
@@ -17,7 +12,6 @@ class Screen1 extends StatefulWidget {
 class _Screen1State extends State<Screen1> {
   @override
   Widget build(BuildContext context) {
-    String name = '';
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
     print(height);

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
+// ignore: must_be_immutable
 class CustomTextFieldWidget extends StatefulWidget {
   CustomTextFieldWidget({super.key, required this.controller, this.keyboardType, required this.obscureText, this.prefixIcon, this.suffixIcon, this.validator, this.hintText});
   TextEditingController? controller;

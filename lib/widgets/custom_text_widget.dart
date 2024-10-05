@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+// ignore: must_be_immutable
 class CustomTextWidget extends StatelessWidget {
   CustomTextWidget({super.key, required this.text, this.color, this.fontSize, this.fontWeight, this.maxLines, this.overflow});
   String text;

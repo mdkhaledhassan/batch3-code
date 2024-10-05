@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import 'widgets/cuustom_text_field_widget.dart';
 
+// ignore: must_be_immutable
 class Screen2 extends StatefulWidget {
   Screen2({super.key, this.index});
   String? index;
@@ -95,6 +96,10 @@ class _Screen2State extends State<Screen2> {
                   {
                     return 'Please enter your email';
                   }
+                  else
+                  {
+                    return null;
+                  }
                 },
               ),
               SizedBox(
@@ -109,6 +114,10 @@ class _Screen2State extends State<Screen2> {
                   if(p0!.isEmpty)
                   {
                     return 'Please enter your password';
+                  }
+                  else
+                  {
+                    return null;
                   }
                 },
               ),
