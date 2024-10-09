@@ -5,8 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-
-import 'getx/getx_home_screen.dart';
+import 'model-class/model_home_screen.dart';
 
 final box = GetStorage();
 
@@ -34,7 +33,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         title: 'Flutter Batch 3',
-        home: const GetxHomeScreen(),
+        home: const HomePageModelClass(),
       ),
     );
 
